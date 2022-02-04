@@ -1,39 +1,34 @@
 <template>
-   <v-row justify-center align-center>
-       <v-col cols="12" sm12 md6>
-           <v-text-field
-            label="MailAdress"
-            :rules="rules"
-            hide-details="auto"
-           >
-           </v-text-field>
-           <v-text-field
-            label="Password"
-            :rules="rules"
-            hide-details="auto"
-           >
-           </v-text-field>
-       </v-col>
-   </v-row> 
+  <v-row justify-center align-center>
+    <SignField />
+    <v-overlay :value="overlay">
+    <v-progress-circular
+      indeterminate
+      size="64"
+    ></v-progress-circular>
+    </v-overlay>
+  </v-row>
 </template>
 <script lang="ts">
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import Store from '../store/store'
 
 export default {
-  name: 'InspirePage'
+  name: 'SignUpPage'
 }
-//in
-const auth = getAuth();
+
+const auth = getAuth()
 createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
-    const user = userCredential.user;
+    const user = userCredential.user
     // ...
   })
   .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
+    const errorCode = error.code
+    const errorMessage = error.message
     // ..
-});
+  }
+)
 </script>

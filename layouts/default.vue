@@ -89,6 +89,7 @@
 </template>
 
 <script>
+import Store from '../store/store'
 export default {
   name: 'DefaultLayout',
   data () {
