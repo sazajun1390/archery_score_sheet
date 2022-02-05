@@ -1,34 +1,48 @@
 <template>
   <v-col cols="12" sm12 md6>
-    <v-text-field
+    <v-form 
+      ref="Mail"
+      v-model="valid"
+      lazy-validation
+    >
+      <v-text-field
       v-model="setMail"
       label="MailAdress"
-      :rules="[rules.required, rules.email]"
+      :rules="emailRules"
       hide-details="auto"
       >
-    </v-text-field>
-    <v-text-field
+      </v-text-field>
+    </v-form>
+    <v-form ref="Pass">
+      <v-text-field
       v-model="setPass"
       label="Password"
-      :rules="[rules.required, rules.pass]"
+      :rules="passRules"
       hide-details="auto"
-    >
-    </v-text-field>
+      >
+      </v-text-field>
+    </v-form>
   </v-col>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+export default Vue.extend({
   name: 'SignField',
   data () {
     return {
-      rules: {
-        required: value => !!value || 'This field is required.',
-        email: (value) => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-          return pattern.test(value) || 'Not an email address.'
-        }
-      }
+      valid: true,
+      setMail: '',
+      setPass: '',
+      success: false,
+      emailRules: [
+        (v:string) => !!v || 'E-mail is required',
+        (v:string) => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      passRules: [
+        (v:string) => !!v || 'Passward is required',
+        (v:string) => /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\\d)[a-zA-Z\\d]{8,32}$/.test(v) || 'error message'
+      ],
     }
   },
   computed: {
@@ -36,5 +50,5 @@ export default {
       
     }
   }
-}
+})
 </script>

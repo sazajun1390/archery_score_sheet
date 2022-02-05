@@ -89,7 +89,6 @@
 </template>
 
 <script>
-import Store from '../store/store'
 export default {
   name: 'DefaultLayout',
   data () {
@@ -107,6 +106,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'SignUp',
+          to: '/SignUpPage'
         }
       ],
       miniVariant: false,
