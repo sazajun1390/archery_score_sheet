@@ -68,14 +68,26 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: '#7f5af0',
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
+          success: colors.green.accent3,
+          customPrimary: '#242629',
+          headLine: '#fffffe',
+          subHeadLine: '#94a1b2',
+          cardBackGround: '#16161a',
+          primaryButton: '#7f5af0',
+          paragraph: '#94a1b2',
+          formText: '#fffffe',
+          svgStroke: '#010101',
+          svgMain: '#fffffe',
+          svgHighLight: '#7f5af0',
+          svgSecondary: '#72757e',
+          svgTertiary: '#2cb67d',
+        },
       }
     }
   },

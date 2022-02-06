@@ -10,15 +10,17 @@
       label="MailAdress"
       :rules="emailRules"
       hide-details="auto"
+      outlined
       >
       </v-text-field>
     </v-form>
-    <v-form ref="Pass">
+    <v-form ref="Pass" style="margin-top: 20px;">
       <v-text-field
       v-model="setPass"
       label="Password"
       :rules="passRules"
       hide-details="auto"
+      outlined
       >
       </v-text-field>
     </v-form>
@@ -52,3 +54,7 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped lang="sass">
+
+</style>
