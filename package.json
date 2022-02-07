@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "@headlessui/vue": "^1.4.3",
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
@@ -39,6 +40,7 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^4.2.1",
     "@nuxtjs/vuetify": "^1.12.3",
     "@vue/test-utils": "^1.3.0",
     "babel-core": "7.0.0-bridge.0",
@@ -47,6 +49,7 @@
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.2.0",
     "jest": "^27.4.4",
+    "postcss": "^8.4.6",
     "ts-jest": "^27.1.1",
     "vue-jest": "^3.0.4"
   }

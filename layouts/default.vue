@@ -4,6 +4,7 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      :style="{ background: $vuetify.theme.themes.dark.headBackgrouund}"
       fixed
       app
     >
@@ -26,6 +27,7 @@
     </v-navigation-drawer>
     <v-app-bar
       :clipped-left="clipped"
+      :style="{ background: $vuetify.theme.themes.dark.headBackgrouund}"
       fixed
       app
     >

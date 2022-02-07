@@ -32,7 +32,8 @@ export default {
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -79,6 +80,7 @@ export default {
           headLine: '#fffffe',
           subHeadLine: '#94a1b2',
           cardBackGround: '#16161a',
+          headBackgrouund: '#16161a',
           primaryButton: '#7f5af0',
           paragraph: '#94a1b2',
           formText: '#fffffe',
@@ -86,8 +88,8 @@ export default {
           svgMain: '#fffffe',
           svgHighLight: '#7f5af0',
           svgSecondary: '#72757e',
-          svgTertiary: '#2cb67d',
-        },
+          svgTertiary: '#2cb67d'
+        }
       }
     }
   },
