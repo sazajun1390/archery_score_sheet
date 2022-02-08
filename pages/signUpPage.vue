@@ -1,7 +1,7 @@
 <template>
   <v-contaier>
     <v-row justify="center" align="center">
-      <SignField />
+      <SignField ref="signData"/>
       <v-col cols="12" justify="end">
         <v-btn
           elevation="8"
@@ -33,13 +33,16 @@ export default {
   name: 'SignUpPage',
   data: () => ({
     overlay: false,
-    disabled: false
+    disabled: true
   }),
   watch: {
     overlay (val:any) {
       val && setTimeout(() => {
         this.overlay = false
       }, 2000)
+    },
+    disabled () {
+      this.disabled = this.$ref.signData.submit()
     }
   }
 }

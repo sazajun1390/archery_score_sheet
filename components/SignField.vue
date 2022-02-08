@@ -9,7 +9,6 @@
         <v-text-field
           dense
           outlined
-          value=''
           v-model="setMail"
           label="Mail"
           hide-details="auto"
@@ -24,7 +23,6 @@
         <v-text-field
           dense
           outlined
-          value=''
           v-model="setPass"
           label="Password"
           hide-details="auto"
@@ -57,10 +55,29 @@ export default Vue.extend({
       ],
       passRules: [
         (v:string) => !!v || 'Passward is required',
-        (v:string) => /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\\d)[a-zA-Z\\d]{8,32}$/.test(v) || 'error message'
+        (v:string) => /.+@.+\..+/.test(v) || 'error message'
       ]
     }
-  }
+  },
+  mounted(){
+    //エラーをリセット
+    this.$refs.Mail.resetValidation()
+    this.$refs.Pass.resetValidation()
+  },
+  computed: {
+    form() {
+      return{
+        mail: this.setMail,
+        passward: this.setPass
+      }
+    }
+  },
+  methods: {
+    submit(){
+      let confirm: boolean = this.$ref.Mail.validation()&&this.$ref.Pass.validation();
+      return confirm ? false : true;
+    }
+  },
 })
 </script>
 
