@@ -15,6 +15,8 @@
           hide-details="auto"
           :style="{background: $vuetify.theme.themes.dark.headBackgrouund}"
           :rules="emailRules"
+          :value="mailValue"
+          @change="tapCount++"
           >
           </v-text-field>
           <v-text-field
@@ -27,7 +29,9 @@
           :type="showPass ? 'text' : 'password'"
           :rules="passRules"
           :style="{background: $vuetify.theme.themes.dark.headBackgrouund}"
+          :value="passValue"
           @click:append= "showPass = !showPass"
+          @change="tapCount++"
           class="mt-1"
           >
           </v-text-field>
@@ -40,7 +44,7 @@
           opacity="0.5"
           class="mt-2"
           color="primary"
-          :disabled="!valid || valueNull"
+          :disabled="!valid || (tapCount < 1)"
         >Submit
         </v-btn>
       </v-col>
@@ -63,10 +67,13 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 export default {
   name: 'SignUpPage',
   data: () => ({
+    tapCount: 0,
     overlay: false,
     disabled: true,
     valid: true,
-    valueNull: true,
+    valueJudge: false, 
+    mailValue: undefined,
+    passValue: undefined,
     setMail: null,
     setPass: null,
     success: false,
@@ -86,7 +93,13 @@ export default {
       val && setTimeout(() => {
         this.overlay = false
       }, 2000)
+    },
+    mailValue (val) {
+
     }
-  }
+  },
+  methods: {
+    
+  },
 }
 </script>
