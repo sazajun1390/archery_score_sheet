@@ -40,7 +40,7 @@
           opacity="0.5"
           class="mt-2"
           color="primary"
-          :disabled="disabled"
+          :disabled="!valid || valueNull"
         >Submit
         </v-btn>
       </v-col>
@@ -55,8 +55,8 @@
 </template>
 
 <script lang="ts">
-import VeeValidate from 'vee-validate';
 /*
+import VeeValidate from 'vee-validate';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 */
 
@@ -66,6 +66,7 @@ export default {
     overlay: false,
     disabled: true,
     valid: true,
+    valueNull: true,
     setMail: null,
     setPass: null,
     success: false,
@@ -86,19 +87,6 @@ export default {
         this.overlay = false
       }, 2000)
     }
-  },
-  computed: {
-    setMail(val:String) {
-      this.permitSubmit();
-    },
-    setPass(val:String){
-      this.permitSubmit();
-    }
-  },
-  methods: {
-    permitSubmit() {
-      this.disabled = !this.$refs.form.validation();
-    }
-  },
+  }
 }
 </script>
