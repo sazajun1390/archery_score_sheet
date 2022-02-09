@@ -16,7 +16,7 @@
           :style="{background: $vuetify.theme.themes.dark.headBackgrouund}"
           :rules="emailRules"
           :value="mailValue"
-          @change="tapCount++"
+          @blur="tapCount++"
           >
           </v-text-field>
           <v-text-field
@@ -31,7 +31,7 @@
           :style="{background: $vuetify.theme.themes.dark.headBackgrouund}"
           :value="passValue"
           @click:append= "showPass = !showPass"
-          @change="tapCount++"
+          @input="tapCount++"
           class="mt-1"
           >
           </v-text-field>
@@ -44,7 +44,7 @@
           opacity="0.5"
           class="mt-2"
           color="primary"
-          :disabled="!valid || (tapCount < 1)"
+          :disabled="!valid || (tapCount < 2)"
         >Submit
         </v-btn>
       </v-col>
