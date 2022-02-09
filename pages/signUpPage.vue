@@ -2,11 +2,11 @@
   <v-contaier>
     <v-row justify="center" align="center">
       <v-col cols="12" sm='40' >
-          <v-form
-          ref="Mail"
-          v-model="valid"
-          lazy-validation
-          >
+        <v-form
+        ref="form"
+        v-model="valid"
+        lazy-validation
+        >
           <v-text-field
           dense
           outlined
@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts">
-
+import VeeValidate from 'vee-validate';
 /*
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
 */
@@ -66,8 +66,8 @@ export default {
     overlay: false,
     disabled: true,
     valid: true,
-    setMail: '',
-    setPass: '',
+    setMail: null,
+    setPass: null,
     success: false,
     showPass: false,
     submit: true,
@@ -81,15 +81,23 @@ export default {
     ]
   }),
   watch: {
-    overlay (val:boolean) {
+    overlay (val:any) {
       val && setTimeout(() => {
         this.overlay = false
       }, 2000)
     }
   },
+  computed: {
+    setMail(val:String) {
+      this.permitSubmit();
+    },
+    setPass(val:String){
+      this.permitSubmit();
+    }
+  },
   methods: {
     permitSubmit() {
-      this.this.$refs.form.validation()
+      this.disabled = !this.$refs.form.validation();
     }
   },
 }
