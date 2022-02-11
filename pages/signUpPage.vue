@@ -71,7 +71,7 @@ export default {
     overlay: false,
     disabled: true,
     valid: true,
-    valueJudge: false, 
+    valueJudge: false,
     mailValue: undefined,
     passValue: undefined,
     setMail: null,
@@ -93,13 +93,7 @@ export default {
       val && setTimeout(() => {
         this.overlay = false
       }, 2000)
-    },
-    mailValue (val) {
-
     }
-  },
-  methods: {
-    
-  },
+  }
 }
 </script>
