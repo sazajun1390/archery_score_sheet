@@ -19,7 +19,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
     "consola": "^2.15.3",
-    "core-js": "^3.19.3",
+    "core-js": "^3.23.5",
     "eslint-plugin-import": "^2.25.4",
     "firebase": "^9.6.5",
     "firebaseui": "^6.0.0",
