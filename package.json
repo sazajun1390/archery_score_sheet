@@ -21,7 +21,7 @@
     "consola": "^2.15.3",
     "core-js": "^3.19.3",
     "eslint-plugin-import": "^2.25.4",
-    "firebase": "^9.6.5",
+    "firebase": "^9.9.1",
     "firebaseui": "^6.0.0",
     "nuxt": "^2.15.8",
     "pattern.css": "^1.0.0",
